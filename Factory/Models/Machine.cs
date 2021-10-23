@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Factory.Models
 {
-  public class EMachine
+  public class Machine
   {
     public Machine()
     {

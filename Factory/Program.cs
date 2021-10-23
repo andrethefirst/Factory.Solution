@@ -9,7 +9,7 @@ namespace Factory {
         .UseContentRoot(Directory.GetCurrentDirectory())
         .UseIISIntegration()
         .UseStartup < Startup > ()
-        .Builder();
+        .Build();
       host.Run();
     }
   }

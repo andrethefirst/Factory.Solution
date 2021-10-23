@@ -28,7 +28,7 @@ namespace Factory.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(MachinesController machine, int EngineerId)
+    public ActionResult Create(Machine machine, int EngineerId)
     {
       _db.Machines.Add(machine);
       _db.SaveChanges();
@@ -43,7 +43,7 @@ namespace Factory.Controllers
     public ActionResult Details(int id)
     {
       var thisMachine = _db.Machines
-        .Include(MachinesController => machine.JoinEntities)
+        .Include(machine => machine.JoinEntities)
         .ThenInclude(join => join.Engineer)
         .FirstOrDefault(machine => machine.MachineId == id);
       return View(thisMachine);
@@ -92,7 +92,7 @@ namespace Factory.Controllers
       return View(thisMachine);
     }
 
-    [HttpPost, ActionResult("Delete")]
+    [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
       var thisMachine = _db.Machines.FirstOrDefault(Machine => Machine.MachineId == id);
