@@ -44,7 +44,7 @@ namespace Factory.Controllers
       return View(thisEngineer);
     }
 
-    public ActionResult Edit(int id)
+    public ActionResult Edit(int id, int EngineerId)
     {
       var thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
       return View(thisEngineer);
